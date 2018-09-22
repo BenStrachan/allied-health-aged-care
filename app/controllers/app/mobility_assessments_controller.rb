@@ -74,6 +74,6 @@ class App::MobilityAssessmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mobility_assessment_params
-      params.require(:mobility_assessment).permit(:date, :business_id, :author_id)
+      params.require(:mobility_assessment).permit(:date, :business_id, :author_id, :resident_id)
     end
 end

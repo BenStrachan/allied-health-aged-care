@@ -74,6 +74,6 @@ class App::PainAssessmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pain_assessment_params
-      params.require(:pain_assessment).permit(:date, :business_id, :author_id)
+      params.require(:pain_assessment).permit(:date, :business_id, :author_id, :resident_id)
     end
 end

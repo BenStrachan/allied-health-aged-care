@@ -11,4 +11,5 @@
 #
 
 class MobilityAssessment < ApplicationRecord
+  belongs_to :resident, optional: true
 end

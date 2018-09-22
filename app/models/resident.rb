@@ -19,4 +19,12 @@
 
 class Resident < ApplicationRecord
   belongs_to :business, optional: true
+  has_many :post_fall_assessments, dependent: :destroy
+  has_many :mobility_assessments, dependent: :destroy
+  has_many :pain_assessments, dependent: :destroy
+
+  def full_name
+  [first_name, last_name].select(&:present?).join(' ').titleize
+  end
+
 end

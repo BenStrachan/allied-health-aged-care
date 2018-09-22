@@ -18,7 +18,13 @@
       <div class="box-body">
         <p>
           <strong>Date:</strong>
-          <%= @post_fall_assessment.date %>
+          <%= @post_fall_assessment.date.strftime("%A %v") %>
+        </p>
+
+
+        <p>
+          <strong>Resident:</strong>
+          <%= @post_fall_assessment.resident&.full_name %>
         </p>
 
         <p>
