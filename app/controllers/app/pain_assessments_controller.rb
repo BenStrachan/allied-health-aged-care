@@ -5,7 +5,7 @@ class App::PainAssessmentsController < ApplicationController
   # GET /pain_assessments
   # GET /pain_assessments.json
   def index
-    @pain_assessment = current_business.pain_assessments.order(created_at: :asc).paginate(:page => params[:page])
+    @pain_assessment = current_business.pain_assessments.order(created_at: :desc).paginate(:page => params[:page])
   end
 
   # GET /pain_assessments/1

@@ -5,7 +5,7 @@ class App::MobilityAssessmentsController < ApplicationController
   # GET /mobility_assessments
   # GET /mobility_assessments.json
   def index
-    @mobility_assessment = current_business.mobility_assessments.order(created_at: :asc).paginate(:page => params[:page])
+    @mobility_assessment = current_business.mobility_assessments.order(created_at: :desc).paginate(:page => params[:page])
   end
 
   # GET /mobility_assessments/1

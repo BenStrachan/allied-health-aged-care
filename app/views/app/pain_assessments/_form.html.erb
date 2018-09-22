@@ -3,7 +3,7 @@
 
   <div class="form-inputs">
     <%= f.input :date, label: 'Assessment date' %>
-    <%= f.association :resident, label_method: :full_name, prompt: "Choose a resident", collection: Resident.order(:first_name) %>
+    <%= f.association :resident, label_method: :full_name, prompt: "Choose a resident", collection: @current_business.residents.order(:first_name) %>
 
 
     <div class="form-group">

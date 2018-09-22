@@ -5,7 +5,7 @@ class App::PostFallAssessmentsController < ApplicationController
   # GET /post_fall_assessments
   # GET /post_fall_assessments.json
   def index
-    @post_fall_assessment = current_business.post_fall_assessments.order(created_at: :asc).paginate(:page => params[:page])
+    @post_fall_assessment = current_business.post_fall_assessments.order(created_at: :desc).paginate(:page => params[:page])
   end
 
   # GET /post_fall_assessments/1
