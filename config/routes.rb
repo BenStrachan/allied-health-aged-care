@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'visitors#index'
+  root to: 'app/dashboards#index'
 
   devise_for :users, controllers: {
     sessions: 'users/sessions',
