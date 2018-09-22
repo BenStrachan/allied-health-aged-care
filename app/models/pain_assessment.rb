@@ -1,0 +1,2 @@
+class PainAssessment < ApplicationRecord
+end

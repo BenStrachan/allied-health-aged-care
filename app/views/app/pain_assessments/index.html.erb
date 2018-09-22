@@ -1,0 +1,41 @@
+<section class="content-header">
+  <h1>
+    Pain Assessments
+  </h1>
+</section>
+<section class="content">
+  <div class="box">
+    <div class="box-header">
+    <h3 class="box-title">Pain Assessments</h3>
+      <div class="box-tools">
+        <ul class="pull-right">
+          <a href="<%= new_app_pain_assessment_path %>" class="btn btn-block btn-default btn-sm">New pain assessment</a>
+        </ul>
+      </div>
+    </div>
+    <div class="box-body table-responsive no-padding">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @pain_assessment.each do |pain_assessment| %>
+            <tr>
+              <td><%= pain_assessment.date %></td>
+              <td><%= link_to 'Show', app_pain_assessment_path(pain_assessment) %></td>
+              <td><%= link_to 'Edit', edit_app_pain_assessment_path(pain_assessment) %></td>
+              <td><%= link_to 'Destroy', app_pain_assessment_path(pain_assessment), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+      <div class="text-right">
+        <%= will_paginate @pain_assessment %>
+      </div>
+    </div>
+  </div>
+</section>

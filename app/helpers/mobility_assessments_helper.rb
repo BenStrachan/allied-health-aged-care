@@ -1,0 +1,2 @@
+module MobilityAssessmentsHelper
+end

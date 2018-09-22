@@ -1,0 +1,2 @@
+class PostFallAssessment < ApplicationRecord
+end

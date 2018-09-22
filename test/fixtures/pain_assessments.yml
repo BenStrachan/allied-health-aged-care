@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2018-09-22
+  business_id: 1
+  author_id: 1
+
+two:
+  date: 2018-09-22
+  business_id: 1
+  author_id: 1
