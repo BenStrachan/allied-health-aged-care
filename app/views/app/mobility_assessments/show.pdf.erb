@@ -6,29 +6,3 @@
   <hr>
   <h4>Details</h4>
   <br>
-  <div class="row">
-    <div class="col-md-12">
-      <strong>Assessment date:</strong>
-      <p><%= @mobility_assessment.date.strftime("%A %v") %></p>
-    </div>
-    <div class="col-md-12">
-      <strong>Author:</strong>
-      <p><%= @mobility_assessment.author.try(:full_name) %></p>
-    </div>
-    <div class="col-md-12">
-      <strong>Resident:</strong>
-      <p><%= @mobility_assessment.resident&.full_name %></p>
-    </div>
-    <div class="col-md-12">
-      <strong>Resident date of birth:</strong>
-      <p><%= @mobility_assessment.resident&.date_of_birth.strftime("%v") %></p>
-    </div>
-    <div class="col-md-12">
-      <strong>Resident room:</strong>
-      <p><%= @mobility_assessment.resident&.room %></p>
-    </div>
-    <div class="col-md-12">
-      <strong>Resident medical history:</strong>
-      <p><%= @mobility_assessment.resident&.diagnosis_summary %></p>
-    </div>
-  </div>
