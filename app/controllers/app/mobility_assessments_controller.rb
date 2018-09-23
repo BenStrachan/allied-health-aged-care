@@ -16,6 +16,7 @@ class App::MobilityAssessmentsController < ApplicationController
       format.pdf do
         render pdf: "show",
         disposition: 'inline',
+       :page_size => "A4",
         stream: false,
         layout: 'layouts/pdf.html.erb'
       end

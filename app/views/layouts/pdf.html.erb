@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>BallyCara - Allied Health</title>
-  </head>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= content_for?(:title) ? yield(:title) : "Allied Health App" %></title>
+  <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Allied Health" %>">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <%= wicked_pdf_stylesheet_link_tag "pdf" -%>
+  <%= javascript_include_tag 'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= csrf_meta_tags %>
+</head>
   <body>
     <div class='my_container'>
       <%= yield %>
