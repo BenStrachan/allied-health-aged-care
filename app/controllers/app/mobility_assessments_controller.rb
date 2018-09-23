@@ -11,6 +11,15 @@ class App::MobilityAssessmentsController < ApplicationController
   # GET /mobility_assessments/1
   # GET /mobility_assessments/1.json
   def show
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "show",
+        disposition: 'inline',
+        stream: false,
+        layout: 'layouts/pdf.html.erb'
+      end
+    end
   end
 
   # GET /mobility_assessments/new

@@ -2,12 +2,15 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :date, label: 'Assessment date' %>
-    <%= f.association :resident, label_method: :full_name, prompt: "Choose a resident", collection: @current_business.residents.order(:first_name) %>
-
-    <div class="form-group">
-      <label>Author</label>
-      <input class="form-control" type="text" placeholder="<%= @current_user.full_name %>" readonly value="<%= @mobility_assessment.author.try(:full_name) %>">
+    <h4>Details</h4>
+    <br>
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.association :resident, label_method: :full_name, prompt: "Choose a resident", collection: @current_business.residents.order(:first_name) %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :date, label: 'Assessment date' %>
+      </div>
     </div>
 
     <hr>
@@ -61,16 +64,35 @@
     <hr>
     <h4>Falls & Balance</h4>
     <br>
-    <%= f.input :berg_balance_result, collection: ['0 –20 = high fall risk', '21-40 = medium fall risk', '41-56 = low fall risk'] %>
-    <%= f.input :falls_history, collection: ['One or more in last three months as a resident / inpatient', 'One or more in last 3 months', 'One or more between 3 and 12 months', 'None in the last 12 months'] %>
-    <%= f.input :falls_history_comment, as: :text, autofocus: true, :input_html => {:style => 'width: 100%', :rows => 5, class: 'response-project'}   %>
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.input :berg_balance_result, collection: ['0 –20 = high fall risk', '21-40 = medium fall risk', '41-56 = low fall risk'] %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :falls_history, collection: ['One or more in last three months as a resident / inpatient', 'One or more in last 3 months', 'One or more between 3 and 12 months', 'None in the last 12 months'] %>
+      </div>
+      <div class="col-md-12">
+        <%= f.input :falls_history_comment, label: 'Falls and balance comment', as: :text, autofocus: true, :input_html => {:style => 'width: 100%', :rows => 5, class: 'response-project'}   %>
+      </div>
+    </div>
 
     <hr>
     <h4>Summary</h4>
     <br>
-    <%= f.input :transfer_recommendation, collection: ['0 - Independant', '1 - Supervision', '2 - Assistance', '3 - Mechanical Assistance']  %>
-    <%= f.input :locomotion_recommendation, collection: ['0 - Independant', '1 - Supervision', '2 - Assistance'] %>
-
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.input :transfer_recommendation, collection: ['0 - Independant', '1 - Supervision', '2 - Assistance', '3 - Mechanical Assistance']  %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :locomotion_recommendation, collection: ['0 - Independant', '1 - Supervision', '2 - Assistance'] %>
+      </div>
+    </div>
+    <hr>
+    <div class="form-group">
+      <label>Author</label>
+      <input class="form-control" type="text" placeholder="<%= @current_user.full_name %>" readonly value="<%= @mobility_assessment.author.try(:full_name) %>">
+    </div>
+    <hr>
     </div>
 
   <div class="form-actions">
