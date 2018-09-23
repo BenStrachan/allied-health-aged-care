@@ -18,7 +18,9 @@ class App::MobilityAssessmentsController < ApplicationController
         disposition: 'inline',
        :page_size => "A4",
         stream: false,
-        layout: 'layouts/pdf.html.erb'
+        layout: 'layouts/pdf.html.erb',
+        viewport_size: '1280x1024'
+
       end
     end
   end

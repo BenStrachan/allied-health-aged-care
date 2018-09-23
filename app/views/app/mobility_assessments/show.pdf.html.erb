@@ -1,0 +1,133 @@
+<section class="content">
+  <h2>Mobility care plan</h2>
+  <hr>
+  <h4>Details</h4>
+  <br>
+  <div class="row">
+    <div class="col-md-4">
+      <strong>Assessment date:</strong>
+      <p><%= @mobility_assessment.date.strftime("%A %v") %></p>
+    </div>
+    <div class="col-md-4">
+      <strong>Author:</strong>
+      <p><%= @mobility_assessment.author.try(:full_name) %></p>
+    </div>
+    <div class="col-md-4">
+      <strong>Resident:</strong>
+      <p><%= @mobility_assessment.resident&.full_name %></p>
+    </div>
+    <div class="col-md-4">
+      <strong>Resident date of birth:</strong>
+      <p><%= @mobility_assessment.resident&.date_of_birth.strftime("%v") %></p>
+    </div>
+    <div class="col-md-4">
+      <strong>Resident room:</strong>
+      <p><%= @mobility_assessment.resident&.room %></p>
+    </div>
+    <div class="col-md-4">
+      <strong>Resident medical history:</strong>
+      <p><%= @mobility_assessment.resident&.diagnosis_summary %></p>
+    </div>
+  </div>
+  <hr>
+  <h4>Bed mobility</h4>
+  <br>
+  <div class="row">
+    <div class="col-md-4">
+      <strong>Rolling in bed:</strong>
+      <p><%= @mobility_assessment.rolling_in_bed %></p>
+      <p><%= @mobility_assessment.rolling_in_bed_comment %></p>
+    </div>
+    <div class="col-md-4">
+      <strong>Moving up the bed:</strong>
+      <p><%= @mobility_assessment.moving_up_bed %></p>
+      <p><%= @mobility_assessment.moving_up_bed_comment %></p>
+    </div>
+  </div>
+  <hr>
+  <h4>Transfers</h4>
+  <br>
+  <div class="row">
+    <div class="col-md-4">
+      <strong>Lying to sit:</strong>
+      <p><%= @mobility_assessment.lying_to_sit %></p>
+      <p><%= @mobility_assessment.lying_to_sit_comment %></p>
+    </div>
+    <div class="col-md-4">
+      <strong>Sit to stand:</strong>
+      <p><%= @mobility_assessment.sit_to_stand %></p>
+      <p><%= @mobility_assessment.sit_to_stand_comment %></p>
+    </div>
+    <div class="col-md-4">
+      <strong>Bed to chair:</strong>
+      <p><%= @mobility_assessment.bed_to_chair %></p>
+      <p><%= @mobility_assessment.bed_to_chair_comment %></p>
+    </div>
+  </div>
+  <hr>
+  <h4>Gait</h4>
+  <br>
+  <div class="row">
+    <div class="col-md-6">
+      <strong>Gait:</strong>
+      <p><%= @mobility_assessment.gait %></p>
+      <p><%= @mobility_assessment.gait_comment %></p>
+    </div>
+  </div>
+  <hr>
+  <h4>Bathroom</h4>
+  <br>
+  <div class="row">
+    <div class="col-md-4">
+      <strong>Bathroom:</strong>
+      <p><%= @mobility_assessment.bathroom %></p>
+      <p><%= @mobility_assessment.bathroom_comment %></p>
+    </div>
+  </div>
+  <hr>
+  <h4>Falls and balance</h4>
+  <br>
+  <div class="row">
+    <div class="col-md-4">
+      <strong>Falls history:</strong>
+      <p><%= @mobility_assessment.falls_history %></p>
+    </div>
+    <div class="col-md-4">
+      <strong>Falls history comment:</strong>
+      <p><%= @mobility_assessment.falls_history_comment %></p>
+    </div>
+    <div class="col-md-4">
+      <strong>Berg balance result:</strong>
+      <p><%= @mobility_assessment.berg_balance_result %></p>
+    </div>
+  </div>
+  <hr>
+  <h4>Recommendations</h4>
+  <br>
+  <div class="row">
+    <div class="col-md-4">
+      <strong>Transfer recommendations:</strong>
+      <p><%= @mobility_assessment.transfer_recommendation  %></p>
+    </div>
+    <div class="col-md-4">
+      <strong>Locomotion recommendation:</strong>
+      <p><%= @mobility_assessment.locomotion_recommendation %></p>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-4">
+      <strong>Author:</strong>
+      <p><%= @mobility_assessment.author.try(:full_name) %></p>
+    </div>
+    <div class="col-md-4">
+      <strong>Date:</strong>
+      <br><br>
+    </div>
+    <div class="col-md-4">
+      <strong>Signature</strong>
+      <br><br>
+    </div>
+  </div>
+  <hr>
+</section>
