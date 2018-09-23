@@ -31,8 +31,10 @@ gem "paranoia", "~> 2.2"
 gem 'bootstrap-wysihtml5-rails'
 gem 'ckeditor'
 gem 'local_time'
+
 gem 'wicked_pdf'
-gem 'wkhtmltopdf-binary'
+gem 'wkhtmltopdf-binary',       group: [:development]
+gem 'wkhtmltopdf-binary-edge',  group: [:production, :staging]
 
 gem "paperclip", "~> 5.2.1"
 gem 'aws-sdk', '~> 2.3'
