@@ -9,6 +9,68 @@
       <label>Author</label>
       <input class="form-control" type="text" placeholder="<%= @current_user.full_name %>" readonly value="<%= @mobility_assessment.author.try(:full_name) %>">
     </div>
+
+    <hr>
+    <h4>Mobility Assessment</h4>
+    <br>
+    <div class="row">
+      <div class="col-md-6">
+        <%= f.input :rolling_in_bed, collection: ['Independant', 'Supervision', 'Assist X1', 'Assist X2 with slide sheet'] %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :rolling_in_bed_comment %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :moving_up_bed, collection: ['Independant', 'Supervision', 'Assist X1', 'Assist X2 with slide sheet'] %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :moving_up_bed_comment %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :lying_to_sit, collection: ['Independant', 'Supervision', 'Assist X1', 'Assist X2'] %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :lying_to_sit_comment %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :sit_to_stand, collection: ['Independant', 'Supervision', 'Assist X1', 'Assist X1 to 4WW', 'Assist X2 to 4WW', 'Assist X2 to FASF', 'Assist X2 stand up hoist', 'Assist X2 to full hoist'] %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :sit_to_stand_comment %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :bed_to_chair, collection: ['Independant', 'Supervision', 'Assist X1', 'Assist X1 to 4WW', 'Assist X2 to 4WW', 'Assist X2 to FASF', 'Assist X2 stand up hoist', 'Assist X2 to full hoist'] %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :bed_to_chair_comment %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :gait, collection: ['Independant', 'Supervision no gait aid', 'Supervision with stick', 'Supervision with 4WW', 'Assist X1 no gait aid', 'Assist X1 with stick', 'Assist X1 with 4WW', 'Assist X1 with wheelchair', 'Assist X2 with 4WW', 'Assist X2 with FASF'] %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :gait_comment %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :bathroom, collection: ['Independant', 'Supervision', 'Supervision with shower chair', 'Supervision with shower comode', 'Assist X1 with shower chair', 'Assist X1 with shower comode', 'Assist X2 with shower chair', 'Assist X2 with shower commode'] %>
+      </div>
+      <div class="col-md-6">
+        <%= f.input :bathroom_comment %>
+      </div>
+    </div>
+
+    <hr>
+    <h4>Falls & Balance</h4>
+    <br>
+    <%= f.input :berg_balance_result, collection: ['0 –20 = high fall risk', '21-40 = medium fall risk', '41-56 = low fall risk'] %>
+    <%= f.input :falls_history, collection: ['One or more in last three months as a resident / inpatient', 'One or more in last 3 months', 'One or more between 3 and 12 months', 'None in the last 12 months'] %>
+    <%= f.input :falls_history_comment, as: :text, autofocus: true, :input_html => {:style => 'width: 100%', :rows => 5, class: 'response-project'}   %>
+
+    <hr>
+    <h4>Summary</h4>
+    <br>
+    <%= f.input :transfer_recommendation, collection: ['0 - Independant', '1 - Supervision', '2 - Assistance', '3 - Mechanical Assistance']  %>
+    <%= f.input :locomotion_recommendation, collection: ['0 - Independant', '1 - Supervision', '2 - Assistance'] %>
+
     </div>
 
   <div class="form-actions">

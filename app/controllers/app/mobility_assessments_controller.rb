@@ -74,6 +74,25 @@ class App::MobilityAssessmentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def mobility_assessment_params
-      params.require(:mobility_assessment).permit(:date, :business_id, :author_id, :resident_id)
+      params.require(:mobility_assessment).permit(:date, :business_id, :author_id, :resident_id,
+                                              :rolling_in_bed,
+                                              :moving_up_bed,
+                                              :lying_to_sit,
+                                              :sit_to_stand,
+                                              :bed_to_chair,
+                                              :gait,
+                                              :bathroom,
+                                              :rolling_in_bed_comment,
+                                              :moving_up_bed_comment,
+                                              :lying_to_sit_comment,
+                                              :sit_to_stand_comment,
+                                              :bed_to_chair_comment,
+                                              :gait_comment,
+                                              :bathroom_comment,
+                                              :falls_history,
+                                              :falls_history_comment,
+                                              :berg_balance_result,
+                                              :transfer_recommendation,
+                                              :locomotion_recommendation)
     end
 end

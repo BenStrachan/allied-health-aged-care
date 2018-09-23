@@ -5,7 +5,7 @@
   <div class="col-md-12">
     <div class="box">
       <div class="box-header with-border">
-        <h3 class="box-title">Mobility Assessment</h3>
+        <h3 class="box-title">Mobility care plan</h3>
         <div class="box-tools">
           <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Action
             <span class="fa fa-caret-down"></span></button>
@@ -16,23 +16,270 @@
         </div>
       </div>
       <div class="box-body">
-        <p>
-          <strong>Date:</strong>
-          <%= @mobility_assessment.date.strftime("%A %v") %>
-        </p>
 
-        <p>
-          <strong>Resident:</strong>
-          <%= @mobility_assessment.resident&.full_name %>
-        </p>
-
-        <p>
-          <strong>Author:</strong>
-          <%= @mobility_assessment.author.try(:full_name) %>
-        </p>
-
-
+        <section class="content">
+          <h2>Mobility care plan</h2>
+          <hr>
+          <div class="row">
+            <div class="col-md-4">
+              <strong>Assessment date:</strong>
+              <p><%= @mobility_assessment.date.strftime("%A %v") %></p>
+            </div>
+            <div class="col-md-4">
+              <strong>Author:</strong>
+              <p><%= @mobility_assessment.author.try(:full_name) %></p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-4">
+              <strong>Resident:</strong>
+              <p><%= @mobility_assessment.resident&.full_name %></p>
+            </div>
+            <div class="col-md-4">
+              <strong>Resident date of birth:</strong>
+              <p><%= @mobility_assessment.resident&.date_of_birth.strftime("%v") %></p>
+            </div>
+            <div class="col-md-4">
+              <strong>Resident room:</strong>
+              <p><%= @mobility_assessment.resident&.room %></p>
+            </div>
+          </div>
+          <hr>
+          <h4>Bed mobility</h4>
+          <br>
+          <div class="row">
+            <div class="col-md-4">
+              <strong>Rolling in bed:</strong>
+              <p><%= @mobility_assessment.rolling_in_bed %></p>
+              <p><%= @mobility_assessment.rolling_in_bed_comment %></p>
+            </div>
+            <div class="col-md-4">
+              <strong>Moving up the bed:</strong>
+              <p><%= @mobility_assessment.moving_up_bed %></p>
+              <p><%= @mobility_assessment.moving_up_bed_comment %></p>
+            </div>
+          </div>
+          <hr>
+          <h4>Transfers</h4>
+          <br>
+          <div class="row">
+            <div class="col-md-4">
+              <strong>Lying to sit:</strong>
+              <p><%= @mobility_assessment.lying_to_sit %></p>
+              <p><%= @mobility_assessment.lying_to_sit_comment %></p>
+            </div>
+            <div class="col-md-4">
+              <strong>Sit to stand:</strong>
+              <p><%= @mobility_assessment.sit_to_stand %></p>
+              <p><%= @mobility_assessment.sit_to_stand_comment %></p>
+            </div>
+            <div class="col-md-4">
+              <strong>Bed to chair:</strong>
+              <p><%= @mobility_assessment.bed_to_chair %></p>
+              <p><%= @mobility_assessment.bed_to_chair_comment %></p>
+            </div>
+          </div>
+          <hr>
+          <h4>Gait</h4>
+          <br>
+          <div class="row">
+            <div class="col-md-6">
+              <strong>Gait:</strong>
+              <p><%= @mobility_assessment.gait %></p>
+              <p><%= @mobility_assessment.gait_comment %></p>
+            </div>
+          </div>
+          <hr>
+          <h4>Bathroom</h4>
+          <br>
+          <div class="row">
+            <div class="col-md-4">
+              <strong>Bathroom:</strong>
+              <p><%= @mobility_assessment.bathroom %></p>
+              <p><%= @mobility_assessment.bathroom_comment %></p>
+            </div>
+          </div>
+          <hr>
+          <h4>Falls and balance</h4>
+          <br>
+          <div class="row">
+            <div class="col-md-4">
+              <strong>Falls history:</strong>
+              <p><%= @mobility_assessment.falls_history %></p>
+            </div>
+            <div class="col-md-4">
+              <strong>Falls history comment:</strong>
+              <p><%= @mobility_assessment.falls_history_comment %></p>
+            </div>
+            <div class="col-md-4">
+              <strong>Berg balance result:</strong>
+              <p><%= @mobility_assessment.berg_balance_result %></p>
+            </div>
+          </div>
+          <hr>
+          <h4>Recommendations</h4>
+          <br>
+          <div class="row">
+            <div class="col-md-4">
+              <strong>Transfer recommendations:</strong>
+              <p><%= @mobility_assessment.transfer_recommendation  %></p>
+            </div>
+            <div class="col-md-4">
+              <strong>Locomotion recommendation:</strong>
+              <p><%= @mobility_assessment.locomotion_recommendation %></p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-4">
+              <strong>Author:</strong>
+              <p><%= @mobility_assessment.author.try(:full_name) %></p>
+            </div>
+            <div class="col-md-4">
+              <strong>Date:</strong>
+            </div>
+            <div class="col-md-4">
+              <strong>Signature</strong>
+            </div>
+          </div>
+          <hr>
+        </section>
         </div>
       </div>
     </div>
   </div>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="box">
+      <div class="box-header with-border">
+        <h3 class="box-title">Pictorial</h3>
+        <div class="box-tools">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Action
+            <span class="fa fa-caret-down"></span></button>
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li><a href="<%= edit_app_mobility_assessment_path(@mobility_assessment) %>">Edit</a></li>
+            <li><a href="<%= app_mobility_assessment_path(@mobility_assessment) %>" data-confirm="Are you sure?" data-method="DELETE" >Delete</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="box-body">
+        <section class="content">
+          <div class="row">
+            <div class="col-md-12">
+              <h2>Mobility care plan</h2>
+            </div>
+            <div class="col-md-12">
+              <hr>
+              <div class="row">
+                <div class="col-md-4">
+                  <strong>Resident:</strong>
+                  <p><%= @mobility_assessment.resident&.full_name %></p>
+                </div>
+                <div class="col-md-4">
+                  <strong>Resident date of birth:</strong>
+                  <p><%= @mobility_assessment.resident&.date_of_birth.strftime("%v") %></p>
+                </div>
+                <div class="col-md-4">
+                  <strong>Resident room:</strong>
+                  <p><%= @mobility_assessment.resident&.room %></p>
+                </div>
+              </div>
+              <hr>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <h3>Rolling in bed:</h3>
+              <%= image_tag 'generic-image-placeholder.png', class: 'img-responsive', alt: "Mobile Physiotherapist" %>
+              <p><%= @mobility_assessment.rolling_in_bed %></p>
+              <p><%= @mobility_assessment.rolling_in_bed_comment %></p>
+            </div>
+            <div class="col-md-4">
+              <h3>Moving up the bed:</h3>
+              <%= image_tag 'generic-image-placeholder.png', class: 'img-responsive', alt: "Mobile Physiotherapist" %>
+              <p><%= @mobility_assessment.moving_up_bed %></p>
+              <p><%= @mobility_assessment.moving_up_bed_comment %></p>
+            </div>
+            <div class="col-md-4">
+              <h3>Lying to sit:</h3>
+              <%= image_tag 'generic-image-placeholder.png', class: 'img-responsive', alt: "Mobile Physiotherapist" %>
+              <p><%= @mobility_assessment.lying_to_sit %></p>
+              <p><%= @mobility_assessment.lying_to_sit_comment %></p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <h3>Sit to stand:</h3>
+              <%= image_tag 'generic-image-placeholder.png', class: 'img-responsive', alt: "Mobile Physiotherapist" %>
+              <p><%= @mobility_assessment.sit_to_stand %></p>
+              <p><%= @mobility_assessment.sit_to_stand_comment %></p>
+            </div>
+            <div class="col-md-4">
+              <h3>Bed to chair:</h3>
+              <%= image_tag 'generic-image-placeholder.png', class: 'img-responsive', alt: "Mobile Physiotherapist" %>
+              <p><%= @mobility_assessment.bed_to_chair %></p>
+              <p><%= @mobility_assessment.bed_to_chair_comment %></p>
+            </div>
+            <div class="col-md-4">
+              <h3>Gait:</h3>
+              <%= image_tag 'generic-image-placeholder.png', class: 'img-responsive', alt: "Mobile Physiotherapist" %>
+              <p><%= @mobility_assessment.gait %></p>
+              <p><%= @mobility_assessment.gait_comment %></p>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-4">
+              <strong>Author:</strong>
+              <p><%= @mobility_assessment.author.try(:full_name) %></p>
+            </div>
+            <div class="col-md-4">
+              <strong>Date:</strong>
+            </div>
+            <div class="col-md-4">
+              <strong>Signature</strong>
+            </div>
+          </div>
+          <hr>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="box">
+      <div class="box-header with-border">
+        <h3 class="box-title">Progress note</h3>
+        <div class="box-tools">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Action
+            <span class="fa fa-caret-down"></span></button>
+          <ul class="dropdown-menu dropdown-menu-right">
+            <li><a href="<%= edit_app_mobility_assessment_path(@mobility_assessment) %>">Edit</a></li>
+            <li><a href="<%= app_mobility_assessment_path(@mobility_assessment) %>" data-confirm="Are you sure?" data-method="DELETE" >Delete</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="box-body">
+        <section class="content">
+          <p>MOBILITY CARE PLAN: updated.</p>
+          <p>Mobility care plan updated for <%= @mobility_assessment.resident&.full_name %> on <%= @mobility_assessment.date.strftime("%A %v") %>.</p>
+          <p>Main Findings:</p>
+          <p>- Rolling in bed: <%= @mobility_assessment.rolling_in_bed %>, <%= @mobility_assessment.rolling_in_bed_comment %></p>
+          <p>- Moving up the bed: <%= @mobility_assessment.moving_up_bed %>, <%= @mobility_assessment.moving_up_bed_comment %></p>
+          <p>- Lying to sit: <%= @mobility_assessment.lying_to_sit %>, <%= @mobility_assessment.lying_to_sit_comment %></p>
+          <p>- Sit to stand: <%= @mobility_assessment.sit_to_stand %>, <%= @mobility_assessment.sit_to_stand_comment %></p>
+          <p>- Bed to chair: <%= @mobility_assessment.bed_to_chair %>, <%= @mobility_assessment.bed_to_chair_comment %></p>
+          <p>- Gait: <%= @mobility_assessment.gait %>, <%= @mobility_assessment.gait %></p>
+          <p>- Shower & toilet: <%= @mobility_assessment.bathroom %>, <%= @mobility_assessment.bathroom_comment %></p>
+
+
+        </section>
+    </div>
+  </div>
+</div>
+</div>

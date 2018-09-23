@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180922111104) do
+ActiveRecord::Schema.define(version: 20180923013423) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -38,6 +38,25 @@ ActiveRecord::Schema.define(version: 20180922111104) do
     t.integer "business_id"
     t.integer "author_id"
     t.integer "resident_id"
+    t.string "rolling_in_bed"
+    t.string "moving_up_bed"
+    t.string "lying_to_sit"
+    t.string "sit_to_stand"
+    t.string "bed_to_chair"
+    t.string "gait"
+    t.string "bathroom"
+    t.string "rolling_in_bed_comment"
+    t.string "moving_up_bed_comment"
+    t.string "lying_to_sit_comment"
+    t.string "sit_to_stand_comment"
+    t.string "bed_to_chair_comment"
+    t.string "gait_comment"
+    t.string "bathroom_comment"
+    t.string "falls_history"
+    t.string "falls_history_comment"
+    t.string "berg_balance_result"
+    t.string "transfer_recommendation"
+    t.string "locomotion_recommendation"
   end
 
   create_table "pain_assessments", force: :cascade do |t|
